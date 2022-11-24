@@ -1,0 +1,30 @@
+Material "GreyMat" Diffuse (.5, .5, .5) 1
+Material "RedMat" Diffuse (1, .5, .5) 1
+Material "GreenMat" Diffuse (.5, 1, .5) 1
+Material "BlueMat" Diffuse (.5, .5, 1) 1
+Material "BunnyMat" Diffuse (.5, .3, 0.7) 1
+Material "GlassMat" Refractive (0, 0, 0) 1.4
+Material "MirrorMat" Reflective (0, 0, 0) 1
+Material "GlossyMat" Glossy (1, .5, .5) 1
+Material "WallMat" Diffuse (.7, 1, .5) 1
+
+
+PointLight "Light1" (1.2, -0.9, 0) (.5, .5, 1)
+PointLight "Light2" (-1.2, -0.9, 0) (1, .5, .5)
+PointLight "Light3" (0, 0.9, 2) (.5, .5, .5)
+
+ObjModel "Bunny" "tests/models/bunny.obj" (0.2, -0.9, 2.5) 1.2 "BunnyMat"
+ObjModel "Son" "tests/models/bunny.obj" (0.6, -1.4, 1.5) 0.3 "GreenMat"
+
+Sphere "GlassSphere" (-0.9, -0.6, 2) 0.2 "GlassMat"
+Sphere "GlassSphere2" (-0.9, 0, 2) 0.2 "GlossyMat"
+Sphere "GlassSphere3" (-0.9, 0.6, 2) 0.2 "MirrorMat"
+
+Plane "Floor" (0, -1, 0) (0, 1, 0) "GreyMat"
+Plane "Roof" (0, 1, 0) (0, -1, 0) "GreyMat"
+
+Triangle "FarWallA" (-8, -1, 4) (-8, 1, 4) (8, 1, 4) "BlueMat"
+Triangle "FarWallB" (-8, -1, 4) (8, 1, 4) (8, -1, 4) "BlueMat"
+
+Triangle "RearWallA" (-8, 1, 0) (-8, -1, 0) (8, 1, 0) "WallMat"
+Triangle "RearWallB" (8, 1, 0) (-8, -1, 0) (8, -1, 0) "WallMat"
